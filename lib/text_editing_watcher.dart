@@ -2,25 +2,21 @@ library text_editing_watcher;
 
 import 'package:flutter/cupertino.dart';
 
-typedef TextWidgetBuilder = Widget Function(BuildContext context, String text);
+typedef TextWidgetBuilder = Widget Function(String text);
 
 class TextEditingWatcher extends StatefulWidget {
-
   final TextEditingController controller;
   final TextWidgetBuilder builder;
 
-  TextEditingWatcher({@required this.builder, @required this.controller}):
-        assert (builder != null);
+  TextEditingWatcher({@required this.builder, @required this.controller})
+      : assert(builder != null);
 
   @override
   _TextEditingWatcherState createState() => _TextEditingWatcherState();
-
 }
 
 class _TextEditingWatcherState extends State<TextEditingWatcher> {
-
   String _text;
-
 
   @override
   void initState() {
@@ -43,7 +39,6 @@ class _TextEditingWatcherState extends State<TextEditingWatcher> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.builder(context, _text);
+    return widget.builder(_text);
   }
-
 }
