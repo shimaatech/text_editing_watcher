@@ -9,7 +9,7 @@ This simple widget can be used in order to rebuild other widgets based on change
 ```dart
               TextEditingWatcher(
                 controller: _controller,
-                builder: (context, text) => Text(
+                builder: (text) => Text(
                   'You typed: $text',
                   textAlign: TextAlign.start,
                 ),
@@ -21,7 +21,7 @@ This simple widget can be used in order to rebuild other widgets based on change
           // use TextEditingWatcher for disabling butting when text is empty
           TextEditingWatcher(
             controller: _controller,
-            builder: (context, text) => RaisedButton(
+            builder: (text) => RaisedButton(
               child: Text('submit'),
               onPressed: text.isNotEmpty ? () {} : null,
             ),

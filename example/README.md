@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               TextEditingWatcher(
                 controller: _controller,
-                builder: (context, text) => Text(
+                builder: (text) => Text(
                   'You typed: $text',
                   textAlign: TextAlign.start,
                 ),
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // use TextEditingWatcher for disabling butting when text is empty
           TextEditingWatcher(
             controller: _controller,
-            builder: (context, text) => RaisedButton(
+            builder: (text) => RaisedButton(
               child: Text('submit'),
               onPressed: text.isNotEmpty ? () {} : null,
             ),
